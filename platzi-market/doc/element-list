@@ -1,0 +1,4 @@
+com.platzi.market
+com.platzi.market.persistence.crud
+com.platzi.market.persistence.entity
+com.platzi.market.web.controller

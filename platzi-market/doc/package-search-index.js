@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.platzi.market"},{"l":"com.platzi.market.persistence.crud"},{"l":"com.platzi.market.persistence.entity"},{"l":"com.platzi.market.web.controller"}]
