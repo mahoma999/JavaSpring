@@ -1,0 +1,33 @@
+
+mvn -B archetype:generate -DgroupId=com.example  -DartifactId=example -DarchetypeArtifactId=maven-archetype-quickstart
+
+Creating your first project with maven can be accomplished using the same method as any other java project, or you can utilize some of maven’s built in features to get your project started.
+
+    Run maven’s generate archetype to create the project directory and samples:
+
+    $ mvn archetype:generate
+
+    Once you’ve created the initial project directory, cd into that directory and run the following command to generate the necessary eclipse files:
+
+    $ cd <project_dir>
+    $ mvn eclipse:eclipse
+
+    Now you can start an instance of vim at the project’s root directory and run the following commands to:
+        set the necessary eclipse classpath variable to point to your maven repository.
+        import your new project into eclipse.
+
+    $ vim
+    :MvnRepo
+    :ProjectImport /path/to/new/project
+
+mvn clean compile  # Compila el código fuente
+mvn test           # Ejecuta las pruebas
+mvn package        # Empaqueta y genera el archivo JAR en la carpeta target/
+
+NOTA despues de actualizar el pom.xml
+mvn clean
+mvn install
+mvn eclipse:eclipse
+vim
+:MvnRepo
+:ProjectRefresh

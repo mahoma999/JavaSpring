@@ -1,0 +1,83 @@
+<project>
+  <!-- Otras configuraciones del proyecto -->
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <!-- Configuración del plugin -->
+          <url>http://localhost:8080/manager/text</url>
+          <username>admin</username>
+          <password>admin</password>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <!-- Otras configuraciones del proyecto -->
+
+</project>
+
+docker cp path/to/your/war CONTAINER_ID:/usr/local/tomcat/webapps/your-app.war
+
+docker run -it --rm -p 8080:8080 -v /ruta/local/al/war:/usr/local/tomcat/webapps/myapp tomcat:9.0
+Puedes acceder a tu aplicación desplegada en el contenedor de Tomcat a través de http://localhost:8080/myapp en tu navegador.
+**************************************************
+Agregue esto para que creara el archivo war
+**************************************************
+  <groupId>com.proyecto</groupId>
+  <artifactId>primer-proyecto</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging> ---> esto agregue despues de lo de arriba
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.2.3</version>
+        <configuration>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+**************************************************
+PARA EL ERROR :
+Build path specifies execution environment JavaSE-1.7. 
+There are no JREs installed in the workspace that are strictly compatible wit
+HAY QUE CAMBIAR LA VERSION DE JAVA
+Si deseas cambiar la configuración para utilizar Java 17 en tu proyecto, 
+debes modificar las etiquetas <maven.compiler.source> y <maven.compiler.target> en el archivo pom.xml. 
+Aquí tienes un ejemplo de cómo hacerlo:
+**************************************************
+<properties>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  <maven.compiler.source>17</maven.compiler.source>
+  <maven.compiler.target>17</maven.compiler.target>
+</properties>
+
+**************************************************
+para compilar un un jar desde su clase principal seria
+java -cp segundo-proyecto-1.0.jar com.proyecto.demo.App   App es la clase principal
+En resumen, -cp o -classpath
+**************************************************
+cuando creo protecto mvn y quiero que funcione para java 11
+para que funcione con java 11 
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.8.1</version>
+      <configuration>
+        <source>11</source>
+        <target>11</target>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
+**************************************************
+
