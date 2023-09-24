@@ -33,4 +33,4 @@ vim
 :ProjectRefresh
 
 para correr en terminal y en usando un nuevo perfil
-java -jar -Dspring.profiles.active=pdn platzi-market-0.0.1-SNAPSHOT.jar
+sudo java -jar -Dspring.profiles.active=pdn platzi-market-0.0.1-SNAPSHOT.jar
